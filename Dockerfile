@@ -17,6 +17,5 @@ RUN npm install --prod
 FROM node:19.4-alpine3.17 AS runner
 WORKDIR /app
 COPY --from=prod-deps /app/node_modules ./node_modules
-COPY /tasks ./tasks
-COPY app.js ./
+COPY /src ./
 CMD ["node", "app.js"]
