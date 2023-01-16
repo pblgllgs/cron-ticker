@@ -3,7 +3,6 @@ WORKDIR /app
 COPY package.json ./
 RUN npm install
 
-
 FROM node:19.4-alpine3.17 AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
@@ -14,7 +13,6 @@ FROM node:19.4-alpine3.17 AS prod-deps
 WORKDIR /app
 COPY package.json ./
 RUN npm install --prod
-
 
 FROM node:19.4-alpine3.17 AS runner
 WORKDIR /app
