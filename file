@@ -1,5 +1,7 @@
 docker buildx build \
- --platform linux/amd64,linux/amd64/v2,linux/amd64/v3,linux/arm64,linux/arm/v7 \
+ --platform linux/amd64,linux/amd64/v2,linux/amd64/v3,linux/arm64 \
  -t pblgllgs/cron-ticket:latest --push .
 
- 
+ docker buildx build \
+ --platform linux/amd64,linux/amd64/v2,linux/amd64/v3,linux/arm64 \
+ -t pblgllgs/cron-ticket:multi-stage-multi-platform --push .
